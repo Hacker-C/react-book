@@ -17,7 +17,22 @@
       window.$docsify = {
         name: 'React book, your beginner guide to React',
         repo: 'https://github.com/Hacker-C/react-book',
-        relativePath: true
+        relativePath: true,
+        plugins: [
+          function (hook) {
+            var footer = [
+              '<hr/>',
+              '<footer>',
+              '<span>Created by <span>',
+              '<span><a href="https://mphy.top">MurphyChen</a> &copy;2021-2022 | <a style="text-decoration:none;color:#333" href="https://beian.miit.gov.cn">湘ICP备 2022004296号</a></span>',
+              '</footer>'
+            ].join('')
+
+            hook.afterEach(function (html) {
+              return html + footer
+            })
+          }
+        ]
       }
     </script>
     <script src="./libs/docsify.min.js"></script>
